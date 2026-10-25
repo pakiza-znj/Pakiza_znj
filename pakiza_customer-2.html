@@ -210,5 +210,47 @@ document.getElementById('cartModal').addEventListener('click',e=>{if(e.target.id
 
 renderProducts();updateCart();
 </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(async function connectPakizaProducts() {
+  const SUPABASE_URL = 'https://ctwtxdkigempvenfhuhz.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_D-zDQpKXDR7Qz2k7itqQaQ_eGCEdOT1';
+
+  try {
+    const db = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+    const { data, error } = await db
+      .from('products')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    if (data && data.length > 0) {
+      products = data.map((p) => ({
+        id: parseInt(p.id.replace(/-/g, '').slice(0, 12), 16),
+        name: p.name || 'محصول پاکیزا',
+        category: 'سایر',
+        size: p.stock != null ? 'موجودی: ' + p.stock : '',
+        buy: Number(p.purchase_price) || 0,
+        sell: Number(p.sale_price) || 0,
+        photo: p.image_url || '',
+        video_url: p.video_url || '',
+        kind: 'pack',
+        color: ''
+      }));
+
+      renderProducts();
+      updateCart();
+    }
+  } catch (err) {
+    console.error('خطا در دریافت محصولات پاکیزا:', err);
+  }
+})();
+</script>
 </body>
   </html>
