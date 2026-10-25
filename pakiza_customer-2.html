@@ -1,312 +1,104 @@
 
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>پنل مدیریت پاکیزا</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#f7f5f2;color:#292724;font-family:Tahoma,Arial,sans-serif}
-header{background:#fff;padding:22px 16px;text-align:center;border-bottom:1px solid #eee}
-header h1{margin:0;color:#52745c;font-size:25px}
-header p{color:#777;font-size:13px}
-main{max-width:850px;margin:22px auto;padding:0 14px}
-.card{background:white;padding:18px;border-radius:16px;margin-bottom:16px;box-shadow:0 3px 14px #00000008}
-h2{font-size:18px;margin-top:0}
-input,button{font:inherit;border-radius:10px;padding:12px;width:100%;margin:6px 0}
-input{border:1px solid #ddd;background:#fff}
-button{border:0;background:#52745c;color:white;cursor:pointer}
-button:disabled{opacity:.5}
-.secondary{background:#ecebe7;color:#333}
-.danger{background:#a94343;color:white}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stat{background:#f5f5f1;padding:12px;border-radius:12px;text-align:center}
-.stat strong{display:block;font-size:20px;color:#52745c;margin-top:8px}
-.small{font-size:12px;color:#777;line-height:1.9}
-.product{border:1px solid #eee;border-radius:12px;padding:13px;margin-top:10px;overflow:hidden}
-.product img{width:85px;height:85px;object-fit:contain;float:left}
-.product h3{margin:5px 0 10px;font-size:16px}
-.product video{width:100%;max-height:260px;margin-top:8px;border-radius:10px;background:#222}
-.actions{display:flex;gap:8px;clear:both;padding-top:8px}
-.actions button{flex:1}
-#message{padding:10px;border-radius:9px;display:none;margin-bottom:12px;line-height:1.8}
-.preview{display:block;max-width:100%;max-height:220px;margin:8px auto;border-radius:10px}
-@media(max-width:420px){.grid{grid-template-columns:1fr}.stats{font-size:12px}.stat strong{font-size:16px}}
-</style>
-</head>
-<body>
-<header>
-<h1>پاکیزا شاپ</h1>
-<p>پنل مدیریت فروشنده</p>
-</header>
-<main>
-<div id="message" role="status"></div>
 
-<section class="card" id="loginCard">
-<h2>ورود فروشنده</h2>
-<p class="small">با ایمیل و رمز حساب Supabase وارد شو.</p>
-<form id="loginForm">
-<input id="email" type="email" placeholder="ایمیل" autocomplete="username" required>
-<input id="password" type="password" placeholder="رمز عبور" autocomplete="current-password" required>
-<button id="loginButton" type="submit">ورود به پنل</button>
-</form>
-</section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-<div id="dashboard" hidden>
-<section class="card">
-<div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-<h2>مدیریت محصولات</h2>
-<button id="logoutButton" class="secondary" style="width:auto">خروج</button>
-</div>
-<div class="stats">
-<div class="stat">تعداد محصولات<strong id="totalCount">۰</strong></div>
-<div class="stat">موجودی کل<strong id="totalStock">۰</strong></div>
-<div class="stat">ارزش خرید موجودی<strong id="totalValue">۰</strong></div>
-</div>
-</section>
+پاکیزا ZNJ | انتخاب راحت، خرید مطمئن از محصولات غیاث
+09193443690   |   09043733690
+  
+  
+  
+پ
+پاکیزا ZNJ
+نمایندگی و فروش محصولات غیاث
+  
+  ویدئوهای تستکاتالوگقیمت محصولاتتماس با ما  
+  سبد خرید ۰  
+  
+  
 
-<section class="card">
-<h2 id="formTitle">افزودن محصول جدید</h2>
-<form id="productForm">
-<input id="productName" placeholder="نام محصول" required maxlength="150">
-<div class="grid">
-<input id="purchasePrice" type="number" min="0" step="any" placeholder="قیمت خرید (تومان)" required>
-<input id="salePrice" type="number" min="0" step="any" placeholder="قیمت فروش (تومان)" required>
-</div>
-<input id="stock" type="number" min="0" step="1" placeholder="تعداد موجودی" required>
+GHİYAS • PRODUCT COLLECTION
+خرید هوشمندانه،
+با انتخابی مطمئن
+کاتالوگ محصولات   
+غیاث، مشاهده قیمت‌ها و آماده‌سازی سفارش؛ همه در یک صفحه و مناسب گوشی شما.
+🛍 مشاهده محصولاتپیام در روبیکا📣 کانال روبیکاتلگرامتماس اولتماس دوم
 
-<label class="small" for="imageFile">عکس محصول از گالری گوشی</label>
-<input id="imageFile" type="file" accept="image/*">
-<img id="imagePreview" class="preview" hidden alt="پیش‌نمایش عکس">
-<p class="small" id="currentImage"></p>
+  
 
-<label class="small" for="videoFile">ویدئوی مربوط به همین محصول</label>
-<input id="videoFile" type="file" accept="video/*">
-<video id="videoPreview" class="preview" controls hidden></video>
-<p class="small" id="currentVideo"></p>
+🛍️ خرده‌فروشی (تکی)📦 لیست قیمت محصولات🚛 خرید عمده حجمی🛒 انتخاب محصولات💬 پشتیبانی
+  
 
-<button id="saveButton" type="submit">ذخیره محصول</button>
-<button id="cancelButton" type="button" class="secondary" hidden>لغو ویرایش</button>
-</form>
-<p class="small">عکس و ویدئو در فضای ذخیره‌سازی پاکیزا آپلود می‌شوند. برای نمایش به مشتریان، باکت رسانه باید عمومی باشد.</p>
-</section>
+چرا محصولات غیاث؟
+اطلاعات و قیمت هر محصول را   
+قبل از سفارش بررسی کنید.
+🏷️
+قیمت‌های شفاف
+قیمت محصولات را بررسی کنید و برای سفارش هماهنگ شوید.🎥
+ویدئوهای معرفی و تست
+ویدئوهای واقعی محصولات در بخش مربوطه نمایش داده   
+می‌شوند.📦
+خرید تکی و عمده
+برای قیمت نهایی و شرایط ارسال هماهنگ کنید.
+  
 
-<section class="card">
-<h2>محصولات ثبت‌شده</h2>
-<input id="search" placeholder="جست‌وجوی نام محصول">
-<div id="productsList"></div>
-</section>
-</div>
-</main>
+محصولات منتخب
+محصولات ثبت‌شده در پنل فروشنده
+مشاهده همه ←
 
-<script>
-const SUPABASE_URL = "https://ctwtxdkigempvenfhuhz.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_D-zDQpKXDR7Qz2k7itqQaQ_eGCEdOT1";
-const BUCKET = "product-media";
+  
 
-const $ = id => document.getElementById(id);
-const messageBox = $("message");
-const loginCard = $("loginCard");
-const dashboard = $("dashboard");
-const productForm = $("productForm");
-const productsList = $("productsList");
+کاتالوگ محصولات
+اطلاعات از پنل فروشنده دریافت می‌شود.
+همه محصولاتشویندهواکس و مراقبتخودروییسایر محصولات
+در حال دریافت محصولات…
+در حال اتصال به کاتالوگ محصولات…
+  
 
-let db, products = [], editingId = null, busy = false;
-let oldImageUrl = "", oldVideoUrl = "";
-let imagePreviewUrl = "", videoPreviewUrl = "";
+لیست قیمت محصولات
+قیمت‌های ثبت‌شده در پنل فروشنده
+محصولقیمت تکیموجودیافزودن
+  
 
-function showMessage(text,error=false){
-  messageBox.textContent=text;
-  messageBox.style.display="block";
-  messageBox.style.background=error?"#fff0ef":"#edf6ed";
-  messageBox.style.color=error?"#9a2929":"#315c39";
-}
-function hideMessage(){messageBox.style.display="none"}
-function escapeHTML(v){
-  return String(v??"").replace(/[&<>"']/g,c=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  })[c]);
-}
-function money(v){return Number(v||0).toLocaleString("fa-IR")}
-function setBusy(v){
-  busy=v;
-  document.querySelectorAll("button").forEach(b=>b.disabled=v);
-}
-function clearPreviews(){
-  if(imagePreviewUrl) URL.revokeObjectURL(imagePreviewUrl);
-  if(videoPreviewUrl) URL.revokeObjectURL(videoPreviewUrl);
-  imagePreviewUrl=""; videoPreviewUrl="";
-  $("imagePreview").hidden=true;
-  $("videoPreview").hidden=true;
-  $("imagePreview").removeAttribute("src");
-  $("videoPreview").removeAttribute("src");
-}
-function resetForm(){
-  productForm.reset();
-  clearPreviews();
-  editingId=null; oldImageUrl=""; oldVideoUrl="";
-  $("currentImage").textContent="";
-  $("currentVideo").textContent="";
-  $("formTitle").textContent="افزودن محصول جدید";
-  $("saveButton").textContent="ذخیره محصول";
-  $("cancelButton").hidden=true;
-}
-function updateStats(){
-  $("totalCount").textContent=products.length.toLocaleString("fa-IR");
-  $("totalStock").textContent=products.reduce((s,p)=>s+Number(p.stock||0),0).toLocaleString("fa-IR");
-  $("totalValue").textContent=money(products.reduce((s,p)=>s+Number(p.purchase_price||0)*Number(p.stock||0),0));
-}
-function renderProducts(){
-  const q=$("search").value.trim().toLowerCase();
-  const filtered=products.filter(p=>String(p.name||"").toLowerCase().includes(q));
-  productsList.replaceChildren();
-  if(!filtered.length){
-    productsList.textContent=q?"محصولی با این نام پیدا نشد.":"هنوز محصولی ثبت نشده است.";
-    updateStats(); return;
-  }
-  filtered.forEach(p=>{
-    const div=document.createElement("div");
-    div.className="product";
-    const img=p.image_url&&/^https?:\/\//i.test(p.image_url)?p.image_url:"";
-    const vid=p.video_url&&/^https?:\/\//i.test(p.video_url)?p.video_url:"";
-    div.innerHTML=`
-      ${img?`<img src="${escapeHTML(img)}" alt="" loading="lazy">`:""}
-      <h3>${escapeHTML(p.name)}</h3>
-      <p class="small">قیمت خرید: ${money(p.purchase_price)} تومان</p>
-      <p class="small">قیمت فروش: ${money(p.sale_price)} تومان</p>
-      <p class="small">موجودی: ${money(p.stock)}</p>
-      ${vid?`<video src="${escapeHTML(vid)}" controls preload="metadata"></video>`:""}
-      <div class="actions">
-        <button type="button" class="secondary edit">ویرایش</button>
-        <button type="button" class="danger delete">حذف</button>
-      </div>`;
-    div.querySelector(".edit").addEventListener("click",()=>editProduct(p));
-    div.querySelector(".delete").addEventListener("click",()=>deleteProduct(p));
-    productsList.appendChild(div);
-  });
-  updateStats();
-}
-async function loadProducts(){
-  hideMessage();
-  const {data,error}=await db.from("products").select("*").order("created_at",{ascending:false});
-  if(error){showMessage("بارگذاری محصولات ناموفق بود: "+error.message,true);return}
-  products=data||[]; renderProducts();
-}
-function editProduct(p){
-  resetForm();
-  editingId=p.id; oldImageUrl=p.image_url||""; oldVideoUrl=p.video_url||"";
-  $("productName").value=p.name||"";
-  $("purchasePrice").value=p.purchase_price??0;
-  $("salePrice").value=p.sale_price??0;
-  $("stock").value=p.stock??0;
-  $("currentImage").textContent=oldImageUrl?"عکس فعلی حفظ می‌شود؛ اگر عکس جدید انتخاب کنی جایگزین می‌شود.":"عکس فعلی ندارد.";
-  $("currentVideo").textContent=oldVideoUrl?"ویدئوی فعلی حفظ می‌شود؛ اگر ویدئوی جدید انتخاب کنی جایگزین می‌شود.":"ویدئوی فعلی ندارد.";
-  $("formTitle").textContent="ویرایش محصول";
-  $("saveButton").textContent="ذخیره تغییرات";
-  $("cancelButton").hidden=false;
-  productForm.scrollIntoView({behavior:"smooth",block:"start"});
-}
-async function uploadFile(file,kind){
-  if(!file) return null;
-  const isImage=kind==="image";
-  const maxSize=isImage?12*1024*1024:80*1024*1024;
-  if(file.size>maxSize){
-    throw new Error(isImage?"حجم عکس باید کمتر از ۱۲ مگابایت باشد.":"حجم ویدئو باید کمتر از ۸۰ مگابایت باشد.");
-  }
-  if(isImage&&!file.type.startsWith("image/")) throw new Error("فایل انتخاب‌شده عکس نیست.");
-  if(!isImage&&!file.type.startsWith("video/")) throw new Error("فایل انتخاب‌شده ویدئو نیست.");
-  const ext=(file.name.split(".").pop()|| (isImage?"jpg":"mp4")).toLowerCase().replace(/[^a-z0-9]/g,"");
-  const path=`${kind}s/${Date.now()}-${crypto.randomUUID()}.${ext||"bin"}`;
-  const {error}=await db.storage.from(BUCKET).upload(path,file,{upsert:false,contentType:file.type});
-  if(error) throw error;
-  const {data}=db.storage.from(BUCKET).getPublicUrl(path);
-  return data.publicUrl;
-}
-$("imageFile").addEventListener("change",()=>{
-  if(imagePreviewUrl) URL.revokeObjectURL(imagePreviewUrl);
-  const f=$("imageFile").files[0];
-  imagePreviewUrl=f?URL.createObjectURL(f):"";
-  $("imagePreview").hidden=!f;
-  if(f) $("imagePreview").src=imagePreviewUrl;
-});
-$("videoFile").addEventListener("change",()=>{
-  if(videoPreviewUrl) URL.revokeObjectURL(videoPreviewUrl);
-  const f=$("videoFile").files[0];
-  videoPreviewUrl=f?URL.createObjectURL(f):"";
-  $("videoPreview").hidden=!f;
-  if(f) $("videoPreview").src=videoPreviewUrl;
-});
-async function deleteProduct(p){
-  if(!confirm("محصول «"+p.name+"» حذف شود؟")) return;
-  setBusy(true);
-  const {error}=await db.from("products").delete().eq("id",p.id);
-  setBusy(false);
-  if(error){showMessage("حذف ناموفق بود: "+error.message,true);return}
-  showMessage("محصول حذف شد."); await loadProducts();
-}
-$("loginForm").addEventListener("submit",async e=>{
-  e.preventDefault(); if(busy)return;
-  hideMessage(); setBusy(true);
-  const {error}=await db.auth.signInWithPassword({
-    email:$("email").value.trim(),password:$("password").value
-  });
-  setBusy(false);
-  if(error) showMessage("ورود انجام نشد. ایمیل و رمز را بررسی کن. ("+error.message+")",true);
-});
-$("logoutButton").addEventListener("click",async()=>{
-  if(busy)return; setBusy(true);
-  const {error}=await db.auth.signOut(); setBusy(false);
-  if(error) showMessage("خروج ناموفق بود: "+error.message,true);
-});
-$("cancelButton").addEventListener("click",resetForm);
-$("search").addEventListener("input",renderProducts);
+ویدئوهای تست و معرفی محصولات
+ویدئوهایی که برای محصولات در پنل فروشنده ثبت شده‌اند.
+ویدئویی ثبت نشده است.
+  
 
-productForm.addEventListener("submit",async e=>{
-  e.preventDefault(); if(busy)return; hideMessage();
-  const name=$("productName").value.trim();
-  const purchase=Number($("purchasePrice").value);
-  const sale=Number($("salePrice").value);
-  const stock=Number($("stock").value);
-  if(!name||!Number.isFinite(purchase)||purchase<0||!Number.isFinite(sale)||sale<0||!Number.isInteger(stock)||stock<0){
-    showMessage("لطفاً نام، قیمت‌ها و موجودی را درست وارد کن.",true); return;
-  }
-  const imageFile=$("imageFile").files[0];
-  const videoFile=$("videoFile").files[0];
-  setBusy(true);
-  try{
-    let imageUrl=oldImageUrl||null, videoUrl=oldVideoUrl||null;
-    if(imageFile) imageUrl=await uploadFile(imageFile,"image");
-    if(videoFile) videoUrl=await uploadFile(videoFile,"video");
-    const item={name,purchase_price:purchase,sale_price:sale,stock,image_url:imageUrl,video_url:videoUrl};
-    const result=editingId
-      ? await db.from("products").update(item).eq("id",editingId)
-      : await db.from("products").insert(item);
-    if(result.error) throw result.error;
-    resetForm(); showMessage("محصول و رسانه‌های انتخاب‌شده ذخیره شدند.");
-    await loadProducts();
-  }catch(err){
-    showMessage("ذخیره انجام نشد: "+(err.message||"خطای نامشخص"),true);
-  }finally{setBusy(false)}
-});
+خرید عمده حجمی
+برای سفارش‌های حجمی، تعداد، موجودی، قیمت روز و شرایط ارسال را با فروشگاه هماهنگ کنید.
+استعلام در روبیکا ↗استعلام در تلگرام ↗
+  
 
-async function init(){
-  try{
-    db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-    const {data,error}=await db.auth.getSession();
-    if(error) throw error;
-    showApp(data.session);
-    db.auth.onAuthStateChange((_event,session)=>showApp(session));
-  }catch(err){
-    showMessage("اتصال برقرار نشد. آدرس پروژه و کلید را بررسی کن.",true);
-  }
-}
-function showApp(session){
-  loginCard.hidden=!!session; dashboard.hidden=!session;
-  if(session) loadProducts();
-  else{products=[];productsList.replaceChildren();updateStats();resetForm()}
-}
-init();
-</script>
+عضو کانال پاکیزا ZNJ شو 📣
+برای دیدن اطلاعیه‌ها و معرفی محصولات، به کانال روبیکای پاکیزا بپیوند.
+عضویت در کانال ↗
+  
+  
+پاکیزا ZNJ
+کاتالوگ و سفارش محصولات غیاث
+09193443690   |   09043733690
+روبیکاکانالتلگرام  
+
+سبد خرید
+بستن ✕
+
+جمع تقریبی۰ تومان
+سفارش نهایی پس از تأیید موجودی و قیمت توسط فروشگاه قطعی می‌شود.
+ارسال سفارش در تلگرام ↗ارسال سفارش در روبیکا ↗
+خالی کردن سبد
+  
+
+
+
+  
+
+
